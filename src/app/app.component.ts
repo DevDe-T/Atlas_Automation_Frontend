@@ -64,7 +64,7 @@ applyLeave() {
   //     }
   //   });
   
-  this.http.get<any>('https://cgapgt-backend-sandbox.apps.pgt.eastus.aroapp.io/testingApi')
+  this.http.get<any>('http://localhost:3000/applyLeave')
     .subscribe({
       next: (response) => {
         console.log(response);
@@ -80,7 +80,7 @@ applyLeave() {
 
   checkLeaveStatus() {
   this.errorMsg = '';
-  this.http.get<any>('https://cgapgt-backend-sandbox.apps.pgt.eastus.aroapp.io/checkStatus').subscribe({
+  this.http.get<any>('http://localhost:3000/checkStatus').subscribe({
     next: (response) => {
       if (response.success) {
         this.leaveData = response.data;  // <-- store leave data in a component variable
