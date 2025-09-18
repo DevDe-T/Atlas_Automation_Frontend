@@ -17,7 +17,7 @@
     <!-- Pkg Working Section -->
     <button (click)="checkPkgCode()" class="btn1">Check pkg code</button>
     <div *ngIf="pkgResult" class="results">
-      <h3>{{ pkgResult }}</h3>
+      <h3 style="color: green;">{{ pkgResult }}</h3>
     </div>
     <!-- Results Section -->
     <div *ngIf="searchresult?.length" class="results">
