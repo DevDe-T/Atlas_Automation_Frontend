@@ -60,6 +60,16 @@ body{
   font-weight: 600; /* font-semibold */
   margin : 10px;
 }
+.btn1{
+  border: 2px solid black;
+  cursor: pointer;
+  border-radius: 0.125rem; /* rounded-sm */
+  padding: 0.5rem 1rem; /* px-4 py-2 */
+  background-color: #fa2b2b; /* bg-orange-100 */
+  font-weight: 600; /* font-semibold */
+  margin : 20px;
+  margin-left: 45px;
+}
 
 .date-picker-section {
   margin-top: 0.5rem; /* space-y-2 */
@@ -165,5 +175,6 @@ body{
 
 .results {
   margin-top: 30px;
-  text-align: left;
+  text-align: center;
+  margin-left: 15px;
 }

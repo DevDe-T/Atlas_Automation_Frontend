@@ -29,6 +29,9 @@ export class AppComponent implements OnInit {
   toDate!: string;
   userName : string = '';
 
+  pkgResult: string = '';
+
+
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
@@ -45,6 +48,18 @@ export class AppComponent implements OnInit {
   
   formatDate(date: Date): string {
     return date.toISOString().split('T')[0]; // YYYY-MM-DD
+  }
+
+   checkPkgCode() {
+    this.pkgResult = 'Checking...';
+    this.http.get<{ message: string }>('http://localhost:3000/check-pkg').subscribe({
+      next: (res) => {
+        this.pkgResult = res.message;
+      },
+      error: (err) => {
+        this.pkgResult = 'Error: ' + err.message;
+      },
+    });
   }
 
 

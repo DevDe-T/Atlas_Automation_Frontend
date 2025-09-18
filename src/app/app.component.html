@@ -14,15 +14,20 @@
       />
       <button class="btn" type="submit">Search</button>
     </form>
+    <!-- Pkg Working Section -->
+    <button (click)="checkPkgCode()" class="btn1">Check pkg code</button>
+    <div *ngIf="pkgResult" class="results">
+      <h3>{{ pkgResult }}</h3>
+    </div>
     <!-- Results Section -->
-      <div *ngIf="searchresult?.length" class="results">
-        <h3>Top 5 YouTube Results:</h3>
-        <ol>
-          <li *ngFor="let item of searchresult">
-            {{ item.res }}
-          </li>
-        </ol>
-      </div>
+    <div *ngIf="searchresult?.length" class="results">
+      <h3>Top 5 YouTube Results:</h3>
+      <ol>
+        <li *ngFor="let item of searchresult">
+          {{ item.res }}
+        </li>
+      </ol>
+    </div>
     <div class="button-row">
       <div class="button-wrapper ml-8">
         <button class="btn" (click)="checkLeaveStatus()">
@@ -32,7 +37,6 @@
       <div class="button-wrapper mr-9">
         <button class="btn" (click)="applyLeave()">APPLY LEAVE</button>
       </div>
-     
     </div>
 
     <div class="date-picker-section">
