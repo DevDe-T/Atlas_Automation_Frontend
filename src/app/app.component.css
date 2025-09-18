@@ -1,0 +1,169 @@
+.custom-body {
+  background-color: #f7fafc; /* bg-gray-100 */
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+body{
+    margin : 0px;
+    padding : 0px;
+}
+
+.container {
+  max-width: 48rem; /* max-w-4xl */
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  padding: 1.5rem; /* p-6 */
+  border-radius: 0.375rem; /* rounded */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+}
+
+.welcome-text {
+  font-size: 1.875rem; /* text-3xl */
+  font-style: italic;
+  font-weight: 300; /* font-thin */
+  text-align: center;
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.button-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* space-y-2 */
+}
+
+.ml-8 {
+  margin-left: 2rem;
+}
+
+.mr-9 {
+  margin-right: 2.25rem;
+}
+
+.btn {
+  border: 2px solid black;
+  cursor: pointer;
+  border-radius: 0.125rem; /* rounded-sm */
+  padding: 0.5rem 1rem; /* px-4 py-2 */
+  background-color: #fed7aa; /* bg-orange-100 */
+  font-weight: 600; /* font-semibold */
+  margin : 10px;
+}
+
+.date-picker-section {
+  margin-top: 0.5rem; /* space-y-2 */
+  text-align: center;
+}
+
+.date-picker-title {
+  font-size: 0.875rem; /* text-sm */
+  font-style: italic;
+  font-weight: 300; /* font-thin */
+  margin-bottom: 0.5rem;
+}
+
+.table-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2.5rem 0; /* m-10 */
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
+.mr-5 {
+  margin-right: 1.25rem;
+}
+
+.table-bordered {
+  border: 1px solid black;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+.table-header {
+  background-color: #e5e7eb; /* bg-gray-200 */
+}
+
+.table-cell {
+  border: 1px solid black;
+  padding: 0.5rem 1rem;
+}
+
+.attendance-table {
+  font-size: 0.875rem; /* text-sm */
+  border-color: #e5e7eb; /* border-gray-200 */
+  width: 100%;
+}
+
+.table-row-hover:hover {
+  background-color: #f9fafb; /* hover:bg-gray-50 */
+  transition: background-color 0.2s ease-in-out;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px; /* rounded-full */
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 600; /* font-semibold */
+  color: black;
+}
+
+.status-badge.present {
+  background-color: #d1fae5; /* bg-green-100 */
+  color: #047857; /* text-green-700 */
+}
+
+.status-badge.absent {
+  background-color: #fee2e2; /* bg-red-100 */
+  color: #b91c1c; /* text-red-700 */
+}
+
+.status-badge.cl {
+  background-color: #fef3c7; /* bg-yellow-100 */
+  color: #92400e; /* text-yellow-800 */
+}
+
+.status-badge.oh {
+  background-color: #ede9fe; /* bg-purple-100 */
+  color: #5b21b6; /* text-purple-800 */
+}
+
+.status-badge.weekly-off {
+  background-color: #f3f4f6; /* bg-gray-100 */
+  color: #374151; /* text-gray-700 */
+}
+
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.results {
+  margin-top: 30px;
+  text-align: left;
+}

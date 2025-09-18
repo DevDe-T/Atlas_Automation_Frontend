@@ -19,6 +19,10 @@ export class AppComponent implements OnInit {
   minDate!: string;
   maxDate!: string;
   attendanceList: { date: string; status: string }[] = [];
+
+  searchkey: string = '';
+  searchresult: { num: number; res: string }[] = [];
+
   errorMsg = '';
   leaveData: any = {}; 
   fromDate!: string;
@@ -42,39 +46,46 @@ export class AppComponent implements OnInit {
   formatDate(date: Date): string {
     return date.toISOString().split('T')[0]; // YYYY-MM-DD
   }
-  
+
+
+getSearchResult() {
+  const payload = {
+    searchkey: this.searchkey
+  };
+
+  this.http
+    .post<{ result: { num: number; res: string }[] }>('http://localhost:3000/ytSearch', payload)
+    .subscribe({
+      next: (response) => {
+        this.searchresult = response.result;
+      },
+      error: () => {
+        alert('Error getting top 5 results');
+      }
+    });
+}
+
 
 
 applyLeave() {
-  // const payload = {
-  //   fromDate: this.fromDate
-  // };
+  const payload = {
+    fromDate: this.fromDate
+  };
 
-  // this.http.post<{ attendance: { date: string; status: string }[] }>('https://cgapgt-backend-sandbox.apps.pgt.eastus.aroapp.io/applyLeave', payload)
-  //   .subscribe({
-  //     next: (response) => {
-  //       console.log(response);
-  //       this.attendanceList = response.attendance;
-  //       // this.userName = response.employeeName;
-  //     },
-  //     error: (error) => {
-  //       alert('Error applying leave.');
-  //       console.error('Payload:', payload);
-  //       console.error('Error:', error);
-  //     }
-  //   });
-  
-  this.http.get<any>('http://localhost:3000/applyLeave')
+  this.http.post<{ attendance: { date: string; status: string }[] }>('http://localhost:3000/applyLeave', payload)
     .subscribe({
       next: (response) => {
         console.log(response);
-        
+        this.attendanceList = response.attendance;
+        // this.userName = response.employeeName;
       },
       error: (error) => {
         alert('Error applying leave.');
+        console.error('Payload:', payload);
         console.error('Error:', error);
       }
     });
+  
 }
 
 
