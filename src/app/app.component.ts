@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     const today = new Date();
     const year = today.getFullYear();
-    const month = today.getMonth(); // 0-based index
+    const month = today.getMonth(); 
 
     const firstDay = new Date(year, month, 1);
     const lastDay = new Date(year, month + 1, 0);
@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
   }
   
   formatDate(date: Date): string {
-    return date.toISOString().split('T')[0]; // YYYY-MM-DD
+    return date.toISOString().split('T')[0];
   }
 
    checkPkgCode() {
