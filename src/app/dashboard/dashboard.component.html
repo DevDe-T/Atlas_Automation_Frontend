@@ -1,0 +1,124 @@
+
+<body class="custom-body">
+  <div class="container">
+    <div class="welcome-text">Welcome to Youtube Title Scrapper</div>
+    <form
+      (submit)="getSearchResult(); $event.preventDefault()"
+      class="form-container"
+    >
+      <label>Search for top 5 results</label>
+      <input
+        id="searchkey"
+        type="text"
+        [(ngModel)]="searchkey"
+        name="searchkey"
+      />
+      <button class="btn" type="submit">Search</button>
+    </form>
+    <!-- Pkg Working Section -->
+    <!-- <button (click)="checkPkgCode()" class="btn1">Check pkg code</button>
+    <div *ngIf="pkgResult" class="results">
+      <h3 style="color: green;">{{ pkgResult }}</h3>
+    </div> -->
+    <!-- Results Section -->
+    <div *ngIf="searchresult?.length" class="results">
+      <h3>Top 5 YouTube Results:</h3>
+      <ol>
+        <li *ngFor="let item of searchresult">
+          {{ item.res }}
+        </li>
+      </ol>
+    </div>
+    <!-- <div class="button-row">
+      <div class="button-wrapper ml-8">
+        <button class="btn" (click)="checkLeaveStatus()">
+          CHECK LEAVE STATUS
+        </button>
+      </div>
+      <div class="button-wrapper mr-9">
+        <button class="btn" (click)="applyLeave()">APPLY LEAVE</button>
+      </div>
+    </div>
+
+    <div class="date-picker-section">
+      <div class="date-picker-title">Date Picker</div>
+      <div>
+        <label for="fromDate">From Date:</label>
+        <input
+          id="fromDate"
+          type="date"
+          [min]="minDate"
+          [max]="maxDate"
+          [(ngModel)]="fromDate"
+        />
+      </div>
+      <div>
+        <label for="toDate">To Date:</label>
+        <input
+          id="toDate"
+          type="date"
+          [min]="minDate"
+          [max]="maxDate"
+          [(ngModel)]="toDate"
+        />
+      </div>
+    </div> -->
+
+    <!-- <div class="table-section">
+      <div class="table-wrapper mb-5 mr-5">
+        <table class="table-bordered">
+          <thead class="table-header">
+            <tr>
+              <th class="table-cell" colspan="3">Leave Balance</th>
+            </tr>
+            <tr>
+              <th class="table-cell">TYPE</th>
+              <th class="table-cell">No</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of leaveData | keyvalue">
+              <td class="table-cell">{{ item.key }}</td>
+              <td class="table-cell">{{ item.value }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="table attendance-table">
+          <thead class="table-header">
+            <tr>
+              <th class="table-cell" colspan="2">Attendance Status</th>
+            </tr>
+            <tr>
+              <th class="table-cell">DATE</th>
+              <th class="table-cell">STATUS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of attendanceList" class="table-row-hover">
+              <td class="table-cell">{{ item.date }}</td>
+              <td class="table-cell">
+                <span
+                  class="status-badge"
+                  [ngClass]="{
+                    present: item.status === 'Present',
+                    absent: item.status === 'Absent',
+                    cl: item.status.includes('CL'),
+                    oh: item.status === 'OH',
+                    'weekly-off': item.status === 'Weekly Off'
+                  }"
+                >
+                  {{ item.status }}
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div> -->
+  </div>
+</body>
+
+

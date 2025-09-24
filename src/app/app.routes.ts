@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 export const appRoutes: Routes = [
-  { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'app', component: AppComponent }
+    { path: 'dashboard', component: DashboardComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },  // default redirect to login
+  { path: '**', redirectTo: '/login' }  // wildcard redirect
 ];
