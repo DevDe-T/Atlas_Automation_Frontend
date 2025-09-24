@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ FormsModule, HttpClientModule, NgFor, CommonModule],
+  imports: [ FormsModule, HttpClientModule, NgFor, CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -30,6 +30,7 @@ export class AppComponent implements OnInit {
   userName : string = '';
 
   pkgResult: string = '';
+  title: any;
 
 
   constructor(private http: HttpClient) {}
